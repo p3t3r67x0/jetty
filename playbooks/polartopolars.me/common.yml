@@ -15,6 +15,7 @@
 
     - name: Upgrade APT to latest packages
       apt:
+        force_apt_get: yes
         upgrade: safe
 
     - name: Set timezone to Europe/Berlin
