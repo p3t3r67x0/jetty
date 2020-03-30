@@ -1,0 +1,9 @@
+---
+
+remote_user: 'root'
+project_name: 'enrique'
+app_user: 'ubuntu'
+app_home: '/home/{{ app_user }}/git/{{ project_name }}'
+app_dir: '{{ app_home }}'
+app_repo: 'git@github.com:p3t3r67x0/polartopolars.me.git'
+app_frontend_dir: '{{ app_home }}/app'

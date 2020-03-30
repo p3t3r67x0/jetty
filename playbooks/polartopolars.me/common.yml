@@ -1,0 +1,33 @@
+---
+
+- hosts: frontend
+  remote_user: '{{ remote_user }}'
+  tasks:
+    - name: Set public ssh key in authorized_keys
+      authorized_key:
+        user: ubuntu
+        state: present
+        key: '{{ lookup("file", "/home/awendelk/.ssh/id_rsa.pub") }}'
+
+    - name: Ensure hostname set
+      hostname:
+        name: ubuntu
+
+    - name: Upgrade APT to latest packages
+      apt:
+        upgrade: safe
+
+    - name: Set timezone to Europe/Berlin
+      timezone:
+        name: Europe/Berlin
+
+    - name: Set password authentication to no
+      replace:
+        path: '/etc/ssh/sshd_config'
+        regexp: '^#?PasswordAuthentication .*$'
+        replace: 'PasswordAuthentication no'
+
+    - name: Reload sshd daemon with latest config
+      systemd:
+        state: reloaded
+        name: ssh
