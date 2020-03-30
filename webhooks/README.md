@@ -63,6 +63,13 @@ sudo touch /var/log/githooks/error.log
 ```
 
 
+Change owner of githooks log files
+
+```bash
+sudo chown -R ubuntu:ubuntu /var/log/githooks/
+```
+
+
 Start the service and enable the service
 
 ```bash
