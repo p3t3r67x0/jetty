@@ -8,7 +8,7 @@ Automate the deployment with webhooks and ansible playbooks
 Create a `.config` file in the `/webhooks` folder
 
 ```config
-ANSIBLE_PLAYBOOK = '/home/<user>/git/jetty/ansible/<domain>'
+ANSIBLE_PLAYBOOK = '/home/<user>/git/jetty/playbooks/<domain>'
 ```
 
 
