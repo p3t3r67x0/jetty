@@ -1,7 +1,7 @@
 aniso8601==8.0.0
 asyncio==3.4.3
 click==7.1.1
-Flask==1.1.1
+Flask==2.3.2
 Flask-RESTful==0.3.8
 itsdangerous==1.1.0
 Jinja2==2.11.3
